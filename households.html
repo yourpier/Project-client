@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Household Profiles | Barangay Malinta BIMS</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <img src="malinta-logo.jpg" alt="Malinta Seal" class="sidebar-logo">
+        <h2>Barangay Malinta</h2>
+        <p>Los Baños, Laguna</p>
+      </div>
+      <nav class="nav-menu">
+        <div class="nav-section">
+          <div class="nav-section-title">Main</div>
+          <a href="dashboard.html" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+          <a href="inhabitants.html" class="nav-item"><i class="fas fa-users"></i> Inhabitant Profiles</a>
+          <a href="households.html" class="nav-item active"><i class="fas fa-home"></i> Household Profiles</a>
+          <a href="deceased.html" class="nav-item"><i class="fas fa-cross"></i> Deceased Profiles</a>
+          <a href="officials.html" class="nav-item"><i class="fas fa-user-tie"></i> Barangay Officials</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Issuance</div>
+          <a href="clearances.html" class="nav-item"><i class="fas fa-file-alt"></i> Clearances</a>
+          <a href="certificates.html" class="nav-item"><i class="fas fa-certificate"></i> Certificates</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">System</div>
+          <a href="profile.html" class="nav-item"><i class="fas fa-user-cog"></i> My Profile</a>
+          <a href="index.html" class="nav-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </nav>
+    </aside>
+    <div class="main-content">
+      <header class="top-header">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <button class="menu-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+          <h1 class="page-title">Household Profile Management</h1>
+        </div>
+        <div class="header-actions">
+          <div class="user-info">
+            <div class="user-avatar">BM</div>
+            <div>
+              <div style="font-weight:600;font-size:0.9rem;">Barangay Admin</div>
+              <div style="font-size:0.75rem;color:var(--text-muted);">Malinta, Los Baños</div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="content-area">
+        <div class="stats-grid">
+          <div class="stat-card total">
+            <div class="stat-icon"><i class="fas fa-home"></i></div>
+            <div class="stat-value">312</div>
+            <div class="stat-label">Total Households</div>
+          </div>
+          <div class="stat-card approved">
+            <div class="stat-icon"><i class="fas fa-users"></i></div>
+            <div class="stat-value">1,248</div>
+            <div class="stat-label">Total Members</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3>Households</h3>
+            <div class="card-actions">
+              <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search households...">
+              </div>
+              <button class="btn btn-primary-outline"><i class="fas fa-plus"></i> Add Household</button>
+            </div>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Household ID</th>
+                  <th>Head of Family</th>
+                  <th>Address</th>
+                  <th>Members</th>
+                  <th>Type</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>HH-2024-001</td>
+                  <td>Juan Dela Cruz</td>
+                  <td>Purok 1, Malinta</td>
+                  <td>5</td>
+                  <td>Nuclear</td>
+                  <td><button class="btn btn-sm btn-ghost"><i class="fas fa-eye"></i></button></td>
+                </tr>
+                <tr>
+                  <td>HH-2024-002</td>
+                  <td>Maria Santos</td>
+                  <td>Purok 2, Malinta</td>
+                  <td>3</td>
+                  <td>Single Parent</td>
+                  <td><button class="btn btn-sm btn-ghost"><i class="fas fa-eye"></i></button></td>
+                </tr>
+                <tr>
+                  <td>HH-2024-003</td>
+                  <td>Pedro Reyes</td>
+                  <td>Purok 3, Malinta</td>
+                  <td>6</td>
+                  <td>Extended</td>
+                  <td><button class="btn btn-sm btn-ghost"><i class="fas fa-eye"></i></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
