@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Barangay Malinta BIMS</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <img src="malinta-logo.jpg" alt="Malinta Seal" class="sidebar-logo">
+        <h2>Barangay Malinta</h2>
+        <p>Los Baños, Laguna</p>
+      </div>
+      <nav class="nav-menu">
+        <div class="nav-section">
+          <div class="nav-section-title">Main</div>
+          <a href="dashboard.html" class="nav-item active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+          <a href="inhabitants.html" class="nav-item"><i class="fas fa-users"></i> Inhabitant Profiles</a>
+          <a href="households.html" class="nav-item"><i class="fas fa-home"></i> Household Profiles</a>
+          <a href="deceased.html" class="nav-item"><i class="fas fa-cross"></i> Deceased Profiles</a>
+          <a href="officials.html" class="nav-item"><i class="fas fa-user-tie"></i> Barangay Officials</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Issuance</div>
+          <a href="clearances.html" class="nav-item"><i class="fas fa-file-alt"></i> Clearances</a>
+          <a href="certificates.html" class="nav-item"><i class="fas fa-certificate"></i> Certificates</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">System</div>
+          <a href="profile.html" class="nav-item"><i class="fas fa-user-cog"></i> My Profile</a>
+          <a href="index.html" class="nav-item" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <header class="top-header">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <button class="menu-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+          <h1 class="page-title">Inhabitant Dashboard</h1>
+        </div>
+        <div class="header-actions">
+          <div class="user-info">
+            <div class="user-avatar">BM</div>
+            <div>
+              <div style="font-weight:600;font-size:0.9rem;">Barangay Admin</div>
+              <div style="font-size:0.75rem;color:var(--text-muted);">Malinta, Los Baños</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="content-area">
+        <!-- Stats -->
+        <div class="stats-grid">
+          <div class="stat-card total">
+            <div class="stat-icon"><i class="fas fa-users"></i></div>
+            <div class="stat-value">1,248</div>
+            <div class="stat-label">Total Inhabitants</div>
+          </div>
+          <div class="stat-card approved">
+            <div class="stat-icon"><i class="fas fa-home"></i></div>
+            <div class="stat-value">312</div>
+            <div class="stat-label">Household Profiles</div>
+          </div>
+          <div class="stat-card pending">
+            <div class="stat-icon"><i class="fas fa-vote-yea"></i></div>
+            <div class="stat-value">876</div>
+            <div class="stat-label">Registered Voters</div>
+          </div>
+          <div class="stat-card declined">
+            <div class="stat-icon"><i class="fas fa-cross"></i></div>
+            <div class="stat-value">42</div>
+            <div class="stat-label">Deceased Profiles</div>
+          </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="charts-grid">
+          <div class="chart-card">
+            <h3 style="margin-bottom:12px;font-size:1rem;">Demographics by Sex</h3>
+            <div class="chart-placeholder">
+              <div style="text-align:center;">
+                <div style="font-size:2rem;font-weight:700;color:#2b6cb0;">52% Male</div>
+                <div style="font-size:2rem;font-weight:700;color:#ed8936;">48% Female</div>
+                <p style="margin-top:8px;">Donut Chart Placeholder</p>
+              </div>
+            </div>
+          </div>
+          <div class="chart-card">
+            <h3 style="margin-bottom:12px;font-size:1rem;">Demographics by Age</h3>
+            <div class="chart-placeholder">
+              <div style="width:100%;padding:0 20px;">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+                  <span style="width:60px;font-size:0.8rem;">0-14</span>
+                  <div style="flex:1;height:12px;background:#e2e8f0;border-radius:6px;overflow:hidden;">
+                    <div style="width:28%;height:100%;background:#2b6cb0;"></div>
+                  </div>
+                  <span style="font-size:0.8rem;">350</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+                  <span style="width:60px;font-size:0.8rem;">15-30</span>
+                  <div style="flex:1;height:12px;background:#e2e8f0;border-radius:6px;overflow:hidden;">
+                    <div style="width:35%;height:100%;background:#2b6cb0;"></div>
+                  </div>
+                  <span style="font-size:0.8rem;">437</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+                  <span style="width:60px;font-size:0.8rem;">31-50</span>
+                  <div style="flex:1;height:12px;background:#e2e8f0;border-radius:6px;overflow:hidden;">
+                    <div style="width:25%;height:100%;background:#2b6cb0;"></div>
+                  </div>
+                  <span style="font-size:0.8rem;">312</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <span style="width:60px;font-size:0.8rem;">51+</span>
+                  <div style="flex:1;height:12px;background:#e2e8f0;border-radius:6px;overflow:hidden;">
+                    <div style="width:12%;height:100%;background:#2b6cb0;"></div>
+                  </div>
+                  <span style="font-size:0.8rem;">149</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Recent Activities</h3>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Activity</th>
+                  <th>User</th>
+                  <th>Module</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Added new inhabitant profile</td>
+                  <td>Juan Dela Cruz</td>
+                  <td>BIPS</td>
+                  <td>Oct 20, 2024</td>
+                </tr>
+                <tr>
+                  <td>Released Barangay Clearance</td>
+                  <td>Maria Santos</td>
+                  <td>BCCIS</td>
+                  <td>Oct 19, 2024</td>
+                </tr>
+                <tr>
+                  <td>Updated household data</td>
+                  <td>Admin</td>
+                  <td>BIPS</td>
+                  <td>Oct 18, 2024</td>
+                </tr>
+                <tr>
+                  <td>Issued Certificate of Residency</td>
+                  <td>Pedro Reyes</td>
+                  <td>BCCIS</td>
+                  <td>Oct 17, 2024</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificates | Barangay Malinta BIMS</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <img src="malinta-logo.jpg" alt="Malinta Seal" class="sidebar-logo">
+        <h2>Barangay Malinta</h2>
+        <p>Los Baños, Laguna</p>
+      </div>
+      <nav class="nav-menu">
+        <div class="nav-section">
+          <div class="nav-section-title">Main</div>
+          <a href="dashboard.html" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+          <a href="inhabitants.html" class="nav-item"><i class="fas fa-users"></i> Inhabitant Profiles</a>
+          <a href="households.html" class="nav-item"><i class="fas fa-home"></i> Household Profiles</a>
+          <a href="deceased.html" class="nav-item"><i class="fas fa-cross"></i> Deceased Profiles</a>
+          <a href="officials.html" class="nav-item"><i class="fas fa-user-tie"></i> Barangay Officials</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Issuance</div>
+          <a href="clearances.html" class="nav-item"><i class="fas fa-file-alt"></i> Clearances</a>
+          <a href="certificates.html" class="nav-item active"><i class="fas fa-certificate"></i> Certificates</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">System</div>
+          <a href="profile.html" class="nav-item"><i class="fas fa-user-cog"></i> My Profile</a>
+          <a href="index.html" class="nav-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </nav>
+    </aside>
+    <div class="main-content">
+      <header class="top-header">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <button class="menu-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+          <h1 class="page-title">Certificate Management (BCCIS)</h1>
+        </div>
+        <div class="header-actions">
+          <div class="user-info">
+            <div class="user-avatar">BM</div>
+            <div>
+              <div style="font-weight:600;font-size:0.9rem;">Barangay Admin</div>
+              <div style="font-size:0.75rem;color:var(--text-muted);">Malinta, Los Baños</div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="content-area">
+        <div class="stats-grid">
+          <div class="stat-card total">
+            <div class="stat-icon"><i class="fas fa-certificate"></i></div>
+            <div class="stat-value">89</div>
+            <div class="stat-label">Total Certificates</div>
+          </div>
+          <div class="stat-card approved">
+            <div class="stat-icon"><i class="fas fa-check"></i></div>
+            <div class="stat-value">74</div>
+            <div class="stat-label">Released</div>
+          </div>
+          <div class="stat-card pending">
+            <div class="stat-icon"><i class="fas fa-clock"></i></div>
+            <div class="stat-value">15</div>
+            <div class="stat-label">Pending</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3>Certificates</h3>
+            <div class="card-actions">
+              <button class="btn btn-primary-outline"><i class="fas fa-plus"></i> Add New Certificate</button>
+            </div>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Certificate Type</th>
+                  <th>Recipient</th>
+                  <th>Purpose</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Certificate of Residency</td>
+                  <td>Juan Dela Cruz</td>
+                  <td>Employment</td>
+                  <td>Oct 18, 2024</td>
+                  <td><span class="badge badge-released">Released</span></td>
+                  <td><button class="btn btn-sm btn-primary-outline">View</button></td>
+                </tr>
+                <tr>
+                  <td>Certificate of Indigency</td>
+                  <td>Maria Santos</td>
+                  <td>Medical Assistance</td>
+                  <td>Oct 16, 2024</td>
+                  <td><span class="badge badge-pending">Pending</span></td>
+                  <td><button class="btn btn-sm btn-primary-outline">View</button></td>
+                </tr>
+                <tr>
+                  <td>Certificate of Good Moral</td>
+                  <td>Ana Garcia</td>
+                  <td>School Requirement</td>
+                  <td>Oct 15, 2024</td>
+                  <td><span class="badge badge-released">Released</span></td>
+                  <td><button class="btn btn-sm btn-primary-outline">View</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
